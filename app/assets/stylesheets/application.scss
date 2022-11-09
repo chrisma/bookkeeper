@@ -9,7 +9,15 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
  */
+
+/*
+ * https://github.com/twbs/bootstrap-rubygem#a-ruby-on-rails
+ * remove all the *= require and *= require_tree statements from the Sass file.
+ * Instead, use @import to import Sass files.
+ */
+
+// https://github.com/twbs/bootstrap-rubygem#a-ruby-on-rails
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+$primary: #e2681e;
+@import "bootstrap";
