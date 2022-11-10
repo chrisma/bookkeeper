@@ -1,4 +1,17 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+
+# The SimpleCov.start must be issued before any of your application code is required!
+# https://github.com/simplecov-ruby/simplecov
+require 'simplecov'
+SimpleCov.start 'rails' do
+  # Unfortunately only for simplecov versions > 0.18
+  enable_coverage :branch # https://github.com/simplecov-ruby/simplecov#branch-coverage-ruby--25
+  # Ignore source files with less than 5 lines for code coverage
+  add_filter do |source_file|
+    source_file.lines.count < 5
+  end
+end
+
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'

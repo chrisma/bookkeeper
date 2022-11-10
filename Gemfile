@@ -48,6 +48,11 @@ gem "bootstrap", "~> 5.2.2"
 # Use Sass to process CSS
 gem "sassc-rails"
 
+# Adding this removes some warnings caused by double-loading of the net-protocol library
+# (see https://github.com/ruby/net-imap/issues/16)
+# we should be able to remove this after upgrading to Ruby 3
+gem 'net-http'
+
 # Use devise as an authentication solution [https://github.com/plataformatec/devise]
 gem "devise", github: "heartcombo/devise", ref: "f8d1ea90bc3" # https://steve-condylios.medium.com/how-to-set-up-devise-for-rails-7-466619f6d627
 gem "devise-i18n" # https://github.com/tigrish/devise-i18n
@@ -69,14 +74,14 @@ group :development, :test do
   gem 'factory_bot_rails' # https://github.com/thoughtbot/factory_bot_rails
   # Ruby static code analyzer (aka linter)
   gem 'rubocop', '~> 1.38', require: false # https://github.com/rubocop-hq/rubocop
-  # # Rails Extension for Rubocop
+  # Rails Extension for Rubocop
   gem 'rubocop-rails', require: false # https://github.com/rubocop-hq/rubocop-rails
-  # # rspec Extension for Rubocop
+  # rspec Extension for Rubocop
   gem 'rubocop-rspec', require: false # https://github.com/rubocop-hq/rubocop-rspec
-  # # Performance optimization analysis for your projects
+  # Performance optimization analysis for your projects
   gem 'rubocop-performance', require: false # https://github.com/rubocop-hq/rubocop-performance
-  # # RSpec formatter compatible with GitHub Action's annotations
-  # gem 'rspec-github', require: false # https://github.com/Drieam/rspec-github
+  # RSpec formatter compatible with GitHub Action's annotations
+  gem 'rspec-github', require: false # https://github.com/Drieam/rspec-github
 end
 
 group :development do
@@ -95,4 +100,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  # Code coverage analysis tool for Ruby
+  gem 'simplecov', require: false # https://github.com/simplecov-ruby/simplecov
 end
