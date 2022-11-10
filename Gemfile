@@ -68,13 +68,13 @@ group :development, :test do
   # Factories instead of test fixtures
   gem 'factory_bot_rails' # https://github.com/thoughtbot/factory_bot_rails
   # Ruby static code analyzer (aka linter)
-  # gem 'rubocop', '~> 1.23', require: false # https://github.com/rubocop-hq/rubocop
+  gem 'rubocop', '~> 1.38', require: false # https://github.com/rubocop-hq/rubocop
   # # Rails Extension for Rubocop
-  # gem 'rubocop-rails', require: false # https://github.com/rubocop-hq/rubocop-rails
+  gem 'rubocop-rails', require: false # https://github.com/rubocop-hq/rubocop-rails
   # # rspec Extension for Rubocop
-  # gem 'rubocop-rspec', require: false # https://github.com/rubocop-hq/rubocop-rspec
+  gem 'rubocop-rspec', require: false # https://github.com/rubocop-hq/rubocop-rspec
   # # Performance optimization analysis for your projects
-  # gem 'rubocop-performance', require: false # https://github.com/rubocop-hq/rubocop-performance
+  gem 'rubocop-performance', require: false # https://github.com/rubocop-hq/rubocop-performance
   # # RSpec formatter compatible with GitHub Action's annotations
   # gem 'rspec-github', require: false # https://github.com/Drieam/rspec-github
 end
