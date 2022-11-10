@@ -5,7 +5,8 @@
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Some text about this application's many features, the use cases as part of the sharing economy that it enables and the business value that users of the application can expect. Could also include a call to action to log in or could contain a rhetorical question. Wouldn't that be nice? </p>
         <div class="gap-3 d-sm-flex justify-content-sm-center">
-            <% if current_user %>
+            <%# https://github.com/heartcombo/devise#controller-filters-and-helpers %>
+            <% if user_signed_in? %>
                 <div class="row py-2">
                     <div class="col">
                         currently logged in user: <%= current_user.email %> |
