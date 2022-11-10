@@ -43,10 +43,16 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Bootstrap CSS [https://github.com/twbs/bootstrap-rubygem]
-gem 'bootstrap', '~> 5.2.2'
+gem "bootstrap", "~> 5.2.2"
 
 # Use Sass to process CSS
 gem "sassc-rails"
+
+# Use devise as an authentication solution [https://github.com/plataformatec/devise]
+gem "devise", github: "heartcombo/devise", ref: "f8d1ea90bc3" # https://steve-condylios.medium.com/how-to-set-up-devise-for-rails-7-466619f6d627
+gem "devise-i18n" # https://github.com/tigrish/devise-i18n
+gem "devise-bootstrap-views" # https://github.com/hisea/devise-bootstrap-views
+gem "devise-i18n-bootstrap" # https://github.com/maximalink/devise-i18n-bootstrap
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -54,6 +60,23 @@ gem "sassc-rails"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+end
+
+group :development, :test do
+  # RSpec testing framework as a drop-in alternative to Rails' default testing framework, Minitest
+  gem 'rspec-rails', '~> 6.0.0' # https://github.com/rspec/rspec-rails
+  # Factories instead of test fixtures
+  gem 'factory_bot_rails' # https://github.com/thoughtbot/factory_bot_rails
+  # Ruby static code analyzer (aka linter)
+  # gem 'rubocop', '~> 1.23', require: false # https://github.com/rubocop-hq/rubocop
+  # # Rails Extension for Rubocop
+  # gem 'rubocop-rails', require: false # https://github.com/rubocop-hq/rubocop-rails
+  # # rspec Extension for Rubocop
+  # gem 'rubocop-rspec', require: false # https://github.com/rubocop-hq/rubocop-rspec
+  # # Performance optimization analysis for your projects
+  # gem 'rubocop-performance', require: false # https://github.com/rubocop-hq/rubocop-performance
+  # # RSpec formatter compatible with GitHub Action's annotations
+  # gem 'rspec-github', require: false # https://github.com/Drieam/rspec-github
 end
 
 group :development do
