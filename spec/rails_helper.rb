@@ -73,4 +73,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # This allows us to use `sign_in` for users using devise library
+  config.include Devise::Test::IntegrationHelpers
 end
