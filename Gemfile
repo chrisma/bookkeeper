@@ -100,6 +100,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  # one-liners to test common Rails functionality
+  gem 'shoulda-matchers', '~> 5.0' # https://github.com/thoughtbot/shoulda-matchers
   # Code coverage analysis tool for Ruby
   gem 'simplecov', require: false # https://github.com/simplecov-ruby/simplecov
 end
