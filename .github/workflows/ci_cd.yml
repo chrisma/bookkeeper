@@ -1,0 +1,29 @@
+name: CI and CD
+
+on:
+  push:
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  # Name of the job
+  rspec-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Setup Ruby and bundle
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.4 # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      - name: Run RSpec tests
+        # Don't run RSpec with . https://olivierlacan.com/posts/a-tiny-little-dot/
+        # Show rspec errors as GH annotations https://github.com/Drieam/rspec-github#usage
+        # Exclude specs tagges with 'local_only'
+        run: |
+          bundle exec rails db:setup
+          bundle exec rspec --tag ~local_only spec/ --format documentation --format RSpec::Github::Formatter
