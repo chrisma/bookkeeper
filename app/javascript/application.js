@@ -4,9 +4,6 @@
  * Libraries
  */
 import "@hotwired/turbo-rails"
-// import { Turbo } from "@hotwired/turbo-rails"
-// Turbo.session.drive = false
-
 import "controllers"
 // You must include popper.min.js before bootstrap.js
 // https://getbootstrap.com/docs/5.2/components/tooltips/
@@ -14,6 +11,12 @@ import "popper"
 import "bootstrap"
 
 /*
- * Custom JS
+ * Enable Bootstrap tooltips
+ * https://getbootstrap.com/docs/5.2/components/tooltips/#enable-tooltips
  */
-import "./custom/enable_bootstrap_tooltips" // app/javascript/custom/enable_bootstrap_tooltips.js
+
+// https://turbo.hotwired.dev/reference/events
+document.addEventListener('turbo:load', function () {
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+}, false);
