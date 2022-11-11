@@ -9,9 +9,6 @@ gem "rails", "~> 7.0.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
@@ -65,9 +62,8 @@ gem "devise-i18n-bootstrap" # https://github.com/maximalink/devise-i18n-bootstra
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
-end
-
-group :development, :test do
+  # Use sqlite3 as the database during development and test
+  gem "sqlite3", "~> 1.4"
   # RSpec testing framework as a drop-in alternative to Rails' default testing framework, Minitest
   gem 'rspec-rails', '~> 6.0.0' # https://github.com/rspec/rspec-rails
   # Factories instead of test fixtures
@@ -104,4 +100,8 @@ group :test do
   gem 'shoulda-matchers', '~> 5.0' # https://github.com/thoughtbot/shoulda-matchers
   # Code coverage analysis tool for Ruby
   gem 'simplecov', require: false # https://github.com/simplecov-ruby/simplecov
+end
+
+group :production do
+  gem 'pg' # production database runs on PostgreSQL
 end
