@@ -7,7 +7,7 @@ describe User, type: :model do
     expect(user).to be_valid
   end
 
-  it "sets an email" do
+  it "has an email attribute" do
     expect(user.email).not_to be_blank
   end
 end
