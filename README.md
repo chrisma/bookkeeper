@@ -1,4 +1,9 @@
 # Bookkeeper Portal — 🟦 Edition
+`dev` branch: [![CI & CD](https://github.com/chrisma/bookkeeper/actions/workflows/ci_cd.yml/badge.svg?branch=dev)](https://github.com/chrisma/bookkeeper/actions/workflows/ci_cd.yml)
+
+`main` branch: [![CI & CD](https://github.com/chrisma/bookkeeper/actions/workflows/ci_cd.yml/badge.svg?branch=main)](https://github.com/chrisma/bookkeeper/actions/workflows/ci_cd.yml)
+, deployed app: [Heroku](https://bookkeeper-starter.herokuapp.com)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 A web application for keeping track of items and loaning them out, written in [Ruby on Rails](https://rubyonrails.org/).
@@ -24,7 +29,8 @@ Ensure you have access to a Unix-like environment through:
 ## Developer Guide
 
 ### Employed Frameworks
-* [Bootstrap](https://getbootstrap.com/docs/5.0) for layout, styling and [icons](https://icons.getbootstrap.com/)
+* [Stimulus JS](https://stimulus.hotwired.dev) as the default JavaScript framework, augmenting HTML
+* [Bootstrap](https://getbootstrap.com/docs/5.2) for layout, styling and [icons](https://icons.getbootstrap.com/)
 * [Devise](https://github.com/heartcombo/devise) library for authentication
 * [FactoryBot](https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md#defining-factories) to generate test data
 * [Capybara](https://github.com/teamcapybara/capybara#the-dsl) for feature testing
