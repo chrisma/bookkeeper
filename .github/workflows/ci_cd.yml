@@ -72,4 +72,4 @@ jobs:
           # https://github.com/marketplace/actions/deploy-to-heroku#procfile-passing
           procfile: |
             web: bin/rails server -p ${PORT:-5000} -e $RAILS_ENV
-            release: bin/rails db:migrate
+            release: bin/rails db:migrate; bin/rails assets:precompile
