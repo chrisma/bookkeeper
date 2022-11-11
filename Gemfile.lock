@@ -292,7 +292,7 @@ GEM
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.3.0)
-    uri (0.11.0)
+    uri (0.10.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
